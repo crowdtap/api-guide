@@ -65,6 +65,14 @@ HTTP Code | Rails status symbol | Usage
 404 | :not_found | When the requested resource is not found
 422 | :unprocessable_entity | When there are validation errors
 
+* Rspec also has some helpers to check for these status codes instead of having to remember them.
+
+Example:
+```ruby
+expect(response).to have_http_status(:created)
+expect(response).to have_http_status(:unprocessable_entity)
+```
+
 
 ## SSL
 
