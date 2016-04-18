@@ -2,15 +2,15 @@
 Designing good APIs is key to our growth as we push more things into front-end applications. To that end, we should standardize conventions and follow general good practices while building the APIs.
 
 ## TL;DR version:
-* [Make your APIs RESTful](#restful)
-* [Return useful and meaningful responses](#meaningful-responses)
+* [Make your APIs RESTful](#restful-apis)
+* [Return useful and meaningful responses](#useful-and-meaningful-responses)
 * [Use HTTP codes effectively](#http-codes)
 * [Use SSL everywhere](#ssl)
 * [Take time to make responses pretty and understandable](#pretty-responses)
 * [Namespace and version the api](#namespacing)
 * [Dates](#dates)
 
-## Make your APIs RESTful [#restful] ##
+## RESTful APIs
 
 * As much as possible, make your APIs restful.
 * Rails makes this super easy by giving you the routes helpers.
@@ -24,7 +24,7 @@ resource :brand,   :only => [:show],  :defaults => { :format => 'json' }
 ```
 
 
-## Return useful and meaningful responses
+## Useful and meaningful responses
 
 * It is important to return responses that make sense.
 * The response should be in JSON format and varies depending on the type of request:
@@ -49,7 +49,7 @@ end
 ```
 
 
-## Use HTTP codes effectively
+## HTTP codes
 
 * HTTP codes are a great way to indicate the status of the response and should be used properly.
 * Use the following with the appropriate requests:
@@ -66,13 +66,13 @@ HTTP Code | Rails status symbol | Usage
 422 | :unprocessable_entity | When there are validation errors
 
 
-## Use SSL everywhere
+## SSL
 
 * Always use SSL. **No exceptions**.
 * Today, your web APIs can get accessed from anywhere there is internet (like libraries, coffee shops, airports among others). Not all of these are secure. Many don't encrypt communications at all, allowing for easy eavesdropping or impersonation if authentication credentials are hijacked.
 
 
-## Take time to make the responses pretty and understandable
+## Pretty Responses
 
 * Make sure that the response keys are all readable and meaningful.
 * Denormalize data in the response and nest data as needed so that the response makes sense.
@@ -113,7 +113,7 @@ json.user @user.to_builder.attributes!
 ```
 
 
-## Namespace and version the API
+## Namespacing
 
 * Versioning your API is important if you need to make drastic changes to your API.
 * One way to version your API is in the url by namespacing your api endpoints
