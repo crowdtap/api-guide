@@ -56,14 +56,14 @@ end
 
 HTTP Code | Rails status symbol | Usage
 --- | --- | ---
-200 | :ok |Response to a successful GET, PUT, PATCH or DELETE. Can also be used for a POST that doesn't result in a creation
-201 | :created | Response to a successful POST request that results in a creation
-204 | :no_content | Response to a success DELETE request
-400 | :bad_request | When the request is malformed(eg. body cannot be parsed)
-401 | :unauthorized | When the request is not authenticated with the proper credentials(eg. client accessing an admin url)
-403 | :forbidden | When the requestor is authenticated, but not authorized to request the resource(eg. client accessing another client's brand)
-404 | :not_found | When the requested resource is not found
-422 | :unprocessable_entity | When there are validation errors
+200 | `:ok` |Response to a successful GET, PUT, PATCH or DELETE. Can also be used for a POST that doesn't result in a creation
+201 | `:created` | Response to a successful POST request that results in a creation
+204 | `:no_content` | Response to a success DELETE request
+400 | `:bad_request` | When the request is malformed(eg. body cannot be parsed)
+401 | `:unauthorized` | When the request is not authenticated with the proper credentials(eg. client accessing an admin url)
+403 | `:forbidden` | When the requestor is authenticated, but not authorized to request the resource(eg. client accessing another client's brand)
+404 | `:not_found` | When the requested resource is not found
+422 | `:unprocessable_entity` | When there are validation errors
 
 * Rspec also has some helpers to check for these status codes instead of having to remember them.
 
